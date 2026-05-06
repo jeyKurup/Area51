@@ -1,0 +1,124 @@
+[
+  {
+    "prompt_inputs": {
+      "content": "This study examines the role of microplastics in marine ecosystems and their bioaccumulation in fish populations. We analyzed water samples from five coastal regions and found that polystyrene particles comprised 67% of microplastic debris, with concentrations highest near urban centers."
+    },
+    "solution_criteria": [
+      "Extracts all major topics present in the passage",
+      "Returns results as a JSON array of strings",
+      "Handles minimal text (2-3 sentences) without omitting relevant topics"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a short passage (2-3 sentences) to ensure the prompt handles minimal text gracefully"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in proteomics have leveraged machine learning algorithms to identify biomarkers in complex biological systems. By integrating high-resolution mass spectrometry data with neural network architectures, researchers can now detect protein phosphorylation patterns with unprecedented sensitivity, enabling early disease diagnosis. Simultaneously, chemoinformatics approaches utilizing molecular docking simulations and quantum mechanical calculations have accelerated drug discovery pipelines, while statistical analysis of large-scale omics datasets has revealed previously unknown metabolic pathway interactions in cellular metabolism. These computational methods, combined with chromatographic separation techniques, represent a paradigm shift in understanding how molecular structures relate to biological function."
+    },
+    "solution_criteria": [
+      "Extracts all distinct topics spanning biology, chemistry, and data analysis domains",
+      "Presents topics as a JSON array of strings",
+      "Avoids redundancy while capturing interdisciplinary connections"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with an interdisciplinary passage that spans multiple fields (e.g., biology, chemistry, and data analysis) simultaneously"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Our study employs a mixed-methods approach combining quantitative survey data with qualitative semi-structured interviews to triangulate findings across 450 participants. We utilized structural equation modeling (SEM) to test our theoretical framework, with path analysis revealing significant indirect effects mediated by organizational commitment. Thematic coding was conducted independently by two researchers with inter-rater reliability assessed using Cohen's kappa (\u03ba = 0.87), ensuring robustness of qualitative interpretations. Additionally, we implemented propensity score matching to control for selection bias in our observational design, and conducted sensitivity analyses to evaluate the stability of our causal estimates across different model specifications and subgroup populations."
+    },
+    "solution_criteria": [
+      "Extracts research methodologies and analytical techniques as distinct topics",
+      "Returns topics as a JSON array of strings",
+      "Captures both primary methods (mixed-methods, survey, interviews) and specific statistical techniques (SEM, path analysis, thematic coding, propensity score matching)"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a methodology-heavy passage that emphasizes research approaches and techniques as topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in neuroplasticity research have demonstrated that cognitive rehabilitation techniques can facilitate recovery in stroke patients through targeted motor retraining protocols. Simultaneously, functional neuroimaging studies employing fMRI have revealed previously unknown patterns of hemispheric compensation mechanisms. The role of neurotransmitter systems, particularly dopamine and serotonin, in facilitating synaptic reorganization has emerged as critical to understanding recovery trajectories. Furthermore, longitudinal studies indicate that early intervention combined with intensive physical therapy yields superior outcomes compared to delayed treatment approaches. These findings have important implications for clinical practice guidelines and rehabilitation program design, while also highlighting gaps in our understanding of individual variability in neural adaptation responses."
+    },
+    "solution_criteria": [
+      "Extracts all distinct topics mentioned throughout the passage, including those appearing early, middle, and late in the text",
+      "Returns results as a JSON array of strings",
+      "Avoids including subtopics or descriptive details as separate topics; focuses on core topic concepts"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage where topics are scattered throughout rather than clustered, requiring comprehensive reading comprehension"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent studies examining the efficacy of cognitive behavioral interventions in clinical populations have demonstrated significant improvements in symptom management and functional outcomes. Participants receiving weekly structured sessions showed enhanced emotional regulation, reduced rumination patterns, and improved sleep quality compared to control groups. The neuroimaging data revealed increased activation in prefrontal cortex regions associated with executive function and emotional processing. These findings suggest that systematic engagement with thought-challenging exercises and behavioral activation techniques produces measurable changes in both subjective well-being and objective neural markers, though long-term maintenance of gains requires ongoing practice and environmental support."
+    },
+    "solution_criteria": [
+      "Identifies explicit topics directly mentioned (cognitive behavioral interventions, symptom management, neuroimaging)",
+      "Identifies implicit topics requiring inference (neurobiology, mental health treatment, therapeutic efficacy, behavioral change mechanisms)",
+      "Returns topics as a JSON array of strings",
+      "Avoids extracting specific data points or findings while capturing underlying subject matter"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing implicit topics that require inference rather than explicit mention"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in neuroimaging have illuminated the distinction between working memory and short-term memory, two constructs often conflated in cognitive psychology. Working memory involves the active manipulation and maintenance of information through prefrontal cortex activation, enabling complex reasoning tasks such as mental arithmetic and language comprehension. Short-term memory, by contrast, refers to the passive storage of sensory information in posterior parietal regions without requiring active processing. Furthermore, the role of dopamine in working memory maintenance differs substantially from its function in short-term memory consolidation, suggesting distinct neurochemical mechanisms. These differences have profound implications for understanding cognitive deficits in schizophrenia, where working memory impairments are prominent, versus temporal lobe amnesia, which primarily affects short-term memory capacity."
+    },
+    "solution_criteria": [
+      "Correctly distinguishes between working memory and short-term memory as separate topics rather than merging them",
+      "Identifies all major distinct topics: working memory, short-term memory, neuroimaging mechanisms, dopamine function, and clinical applications",
+      "Does not artificially group closely related but conceptually distinct topics"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing subtly related but distinct topics that could be easily confused or merged incorrectly"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated significant therapeutic potential for treating monogenic disorders through targeted genomic modifications. The mechanism relies on the RNA-guided endonuclease complex that generates double-strand breaks at specific loci, followed by non-homologous end joining (NHEJ) or homology-directed repair (HDR) pathways. Off-target effects remain a critical concern in clinical applications, with whole-genome sequencing studies revealing unintended mutations at sites with high sequence homology. Novel PAM variants and engineered Cas9 variants with improved specificity have emerged as promising solutions. Additionally, viral and non-viral delivery systems, including adeno-associated viruses (AAVs) and lipid nanoparticles (LNPs), are being optimized to enhance in vivo transfection efficiency while minimizing immunogenicity and genotoxicity in target tissues."
+    },
+    "solution_criteria": [
+      "Extracts both technical terms (CRISPR-Cas9, NHEJ, HDR, PAM) and broader domain concepts without oversimplifying acronyms",
+      "Identifies all major topics including gene editing mechanisms, therapeutic applications, safety concerns, and delivery systems",
+      "Returns results as a JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing domain-specific jargon and acronyms to verify proper topic extraction without over-simplification"
+  },
+  {
+    "prompt_inputs": {
+      "content": "While early theories of neural plasticity suggested that the adult brain was largely immutable, contemporary neuroscience has fundamentally challenged this assumption. Unlike the rigid models previously proposed, modern research demonstrates that synaptic remodeling continues throughout the lifespan, though not with the same intensity as in developmental periods. The brain is not a static organ but rather exhibits remarkable adaptive capacity in response to learning and experience. Conversely, the notion that cognitive decline is inevitable in aging has been substantially refuted by longitudinal studies showing preserved neurogenesis in the hippocampus. Rather than accepting deterministic views of neurological function, current evidence points toward dynamic reorganization mechanisms, distinct from the fixed connectivity once believed to characterize mature neural networks."
+    },
+    "solution_criteria": [
+      "Identifies actual topics (neural plasticity, synaptic remodeling, adaptive capacity, neurogenesis, neural reorganization) rather than negated concepts (immutability, rigidity, static properties, cognitive decline)",
+      "Excludes contrasted or rejected ideas that are presented as false or outdated",
+      "Returns results as a JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing negations or contrasts (e.g., discussing what something 'is not') to ensure the prompt correctly identifies actual topics rather than excluded concepts"
+  },
+  {
+    "prompt_inputs": {
+      "content": "The fall of the Roman Empire in the fifth century resulted from a complex interplay of military pressures, economic decline, and administrative fragmentation. Germanic invasions from the north, particularly the Visigothic sack of Rome in 410 CE under Alaric, exposed the vulnerability of imperial defenses and precipitated mass migration patterns across Europe. Simultaneously, the empire faced severe fiscal crises as tax revenues diminished and military expenditures escalated, forcing emperors to debase currency and withdraw garrisons from peripheral provinces. The rise of Christianity as the state religion fundamentally altered civic institutions and cultural cohesion, while the Eastern Byzantine Empire's increasing independence further fragmented political unity. Scholars debate whether these factors constituted a catastrophic collapse or a gradual transformation into medieval feudalism, with archaeological evidence suggesting regional variation in the severity and pace of institutional decline."
+    },
+    "solution_criteria": [
+      "Extracts all major historical topics: military factors, economic conditions, administrative issues, religious change, and regional variation",
+      "Identifies temporal and contextual elements: fifth century, specific dates (410 CE), and empire divisions",
+      "Returns output as a JSON array of strings with no duplicates",
+      "Captures both explicit topics and implied analytical themes present in the passage"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with a historically-focused passage to ensure proper extraction of temporal, contextual, and narrative topics"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have revolutionized artificial intelligence applications across multiple domains. Deep neural networks, a subset of machine learning techniques, have demonstrated exceptional performance in image recognition tasks, achieving 99.8% accuracy on benchmark datasets. These deep learning architectures employ convolutional layers and backpropagation algorithms to automatically extract hierarchical features from raw data. Furthermore, supervised learning methods, including both traditional machine learning and deep neural networks, require large annotated datasets for effective training. The integration of machine learning pipelines with transfer learning approaches has enabled practitioners to leverage pre-trained deep neural networks for domain-specific problems with limited data availability."
+    },
+    "solution_criteria": [
+      "Output is a valid JSON array of strings",
+      "Avoids redundant or duplicate topics in the array",
+      "Includes both general topics (machine learning, supervised learning) and specific subtopics (deep neural networks, convolutional layers, transfer learning) without unnecessary repetition of parent categories"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from a scholarly article into a JSON array of strings\n    ",
+    "scenario": "Testing with overlapping or hierarchical topics (e.g., 'machine learning' and 'deep neural networks') to see if the prompt avoids redundancy"
+  }
+]
